@@ -17,9 +17,12 @@ Jan 12 14:06:03 server sshd[1028]: Failed password for invalid user root from 18
 Jan 12 14:07:45 server sshd[1031]: Failed password for invalid user test from 185.203.116.45 port 51451 ssh2
 Jan 12 14:09:12 server sshd[1034]: Failed password for invalid user guest from 185.203.116.45 port 51466 ssh2
 Jan 12 14:15:22 server sshd[1040]: Failed password for invalid user admin from 185.203.116.45 port 51501 ssh2
+
 4. Analysis
 The repeated login attempts targeting multiple common account names (admin, root, guest, test) indicate automated credential guessing behavior. The consistent external IP address and short time intervals suggest a brute-force or scripted attack attempt.
 No successful login events were recorded during this time window.
+
+
 ### 5. Risk Assessment
 
 | Category     | Assessment |
