@@ -14,7 +14,9 @@ Immediate monitoring and log analysis were conducted to assess risk and determin
 - **Source IP:** 185.203.116.45  
 - **Event Type:** Repeated Failed Login Attempts  
 
-### 3. Event Type: Repeated Failed Login AttemptsLog Evidence (Sample)
+### 3. Log Evidence (Sample)
+
+
 Jan 12 14:05:11 server sshd[1024]: Failed password for invalid user admin from 185.203.116.45 port 51422 ssh2
 Jan 12 14:06:03 server sshd[1028]: Failed password for invalid user root from 185.203.116.45 port 51433 ssh2
 Jan 12 14:07:45 server sshd[1031]: Failed password for invalid user test from 185.203.116.45 port 51451 ssh2
