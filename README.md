@@ -1,5 +1,7 @@
-# soc-incident-report-1SOC Incident Investigation Report
-Incident: Multiple Failed Login Attempts
+# SOC Incident Investigation Report
+
+## Incident: Multiple Failed Login Attempts
+
 1. Executive Summary
 On 12 January 2026, multiple failed login attempts were detected on the internal company authentication server from a single external IP address over a 15-minute period. The activity pattern suggests a potential brute-force attack attempt targeting user credentials.
 Immediate monitoring and log analysis were conducted to assess risk and determine whether unauthorized access was achieved.
@@ -18,14 +20,24 @@ Jan 12 14:15:22 server sshd[1040]: Failed password for invalid user admin from 1
 4. Analysis
 The repeated login attempts targeting multiple common account names (admin, root, guest, test) indicate automated credential guessing behavior. The consistent external IP address and short time intervals suggest a brute-force or scripted attack attempt.
 No successful login events were recorded during this time window.
-5. Risk Assessment
-Likelihood: Medium
-Impact: High (if successful)
-Current Status: No confirmed breach
-Although no successful access was achieved, repeated attempts indicate external reconnaissance and targeting.
+### 5. Risk Assessment
+
+| Category     | Assessment |
+|--------------|------------|
+| Likelihood   | Medium     |
+| Impact       | High (if successful) |
+| Status       | No confirmed breach |
+
+Although no successful authentication occurred, the repeated attempts indicate reconnaissance activity and potential brute-force automation.
 6. Recommendations
 Block the source IP address at firewall level.
 Enable account lockout policies after multiple failed attempts.
 Implement multi-factor authentication (MFA).
 Review SSH configuration and disable root login.
 Continue log monitoring for similar patterns.
+### 7. Lessons Learned
+
+- SSH services exposed to the internet require strict access controls.
+- Default or common usernames increase attack surface.
+- Continuous monitoring and alerting are critical for early detection.
+- Multi-factor authentication significantly reduces brute-force success rates.
